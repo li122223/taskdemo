@@ -18,6 +18,8 @@
         <i class="fa fa-bars"></i>
     </a>
 
+    <span class="font-weight-light" >[[${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd')}]]</span>
+
     <ul class="navbar-nav ml-auto">
         <li class="nav-item d-md-down-none">
             <a href="#">
@@ -36,7 +38,7 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="./imgs/avatar-1.png" th:src="@{/dist/imgs/avatar-1.png}" class="avatar avatar-sm" alt="logo">
-                <span class="small ml-1 d-md-down-none">John Smith</span>
+                <span class="small ml-1 d-md-down-none" th:text="${session.loginUser.username}"></span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right">
@@ -190,7 +192,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item nav-dropdown">
+         <!--   <li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="icon icon-graph"></i>Dept<i class="fa fa-caret-left"></i>
                 </a>
@@ -202,7 +204,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li>-->
 
      <!--       <li class="nav-item">
                 <a href="#" class="nav-link">

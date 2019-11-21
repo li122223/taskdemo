@@ -36,7 +36,7 @@ public class UserController {
                 return "main";
             }
             }
-        session.setAttribute("密码不一致", "message");
+        model.addAttribute("message","密码不一致");
         return "user_edit";
 
 

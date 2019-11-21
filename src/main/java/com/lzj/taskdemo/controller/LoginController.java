@@ -27,6 +27,8 @@ public class LoginController {
         User user = loginService.login(username,password);
         if (user!=null){
             session.setAttribute("loginUser",user);
+
+
             return "main";
         }else{
             model.addAttribute("error","用户名和密码错误");
@@ -39,6 +41,7 @@ public class LoginController {
     public String quit(HttpSession session){
         session.setAttribute("loginUser",null);
         return "login";
+
     }
 
 
