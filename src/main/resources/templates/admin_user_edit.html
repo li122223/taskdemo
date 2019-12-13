@@ -80,7 +80,7 @@
 
     <div class="main-container">
 
-        <div th:replace="commons/bar::sidebar"></div>
+        <div th:replace="commons/bar::admin_sidebar"></div>
 
         <div class="content">
             <div class="container-fluid">
@@ -91,7 +91,7 @@
                                 Basic Forms
                             </div>
 
-                            <form method="post" th:action="@{/UpdatePsw}">
+                            <form method="post" th:action="@{/AdminUpdatePsw}">
 
 
                                 <div class="card-body">
@@ -120,29 +120,29 @@
                                             <font color="red"><p  th:text="${message}"></p></font>
                                         </div>
 
-                                        </div>
-                                        <button class="btn btn-primary" type="submit">update</button>
-                                        <a class="btn btn-success" th:href="@{/to_main}">back</a>
                                     </div>
+                                    <button class="btn btn-primary" type="submit">update</button>
+                                    <a class="btn btn-success" th:href="@{/to_main}">back</a>
                                 </div>
-                            </form>
                         </div>
+                        </form>
                     </div>
-
-
-
-
                 </div>
+
+
 
 
             </div>
 
-            <script th:src="@{/dist/vendor/jquery/jquery.min.js}"></script>
-            <script th:src="@{/dist/vendor/popper.js/popper.min.js}"></script>
-            <script th:src="@{/dist/vendor/bootstrap/js/bootstrap.min.js}"></script>
-            <script th:src="@{/dist/vendor/chart.js/chart.min.js}"></script>
-            <script th:src="@{/dist/js/carbon.js}"></script>
-            <script th:src="@{/dist/js/demo.js}"></script>
+
+        </div>
+
+        <script th:src="@{/dist/vendor/jquery/jquery.min.js}"></script>
+        <script th:src="@{/dist/vendor/popper.js/popper.min.js}"></script>
+        <script th:src="@{/dist/vendor/bootstrap/js/bootstrap.min.js}"></script>
+        <script th:src="@{/dist/vendor/chart.js/chart.min.js}"></script>
+        <script th:src="@{/dist/js/carbon.js}"></script>
+        <script th:src="@{/dist/js/demo.js}"></script>
 
 </body>
 </html>

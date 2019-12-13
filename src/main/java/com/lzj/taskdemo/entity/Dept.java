@@ -15,8 +15,7 @@ import java.util.Set;
 public class Dept implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private String id;
     private String DeptName;
     private String address;
 

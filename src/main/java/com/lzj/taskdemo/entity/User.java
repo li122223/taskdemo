@@ -2,6 +2,7 @@ package com.lzj.taskdemo.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,12 +12,13 @@ import javax.persistence.Id;
 @Entity(name = "User")
 @Getter
 @Setter
+@ToString
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id/*    @GeneratedValue(strategy = GenerationType.IDENTITY)*/
     private Integer id;
     private String username;
     private String password;
     private String email;
     private String phone;
+    private String role;
 }

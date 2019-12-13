@@ -273,18 +273,18 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     Dept_list
-                                    <a href="#"> <button type="button" class="btn btn-outline-primary" >Add</button></a>
+                                    <a href="#" th:href="@{/dept_add}"> <button type="button" class="btn btn-outline-primary" >Add</button></a>
                                 </div>
                                 <div class="col-md-4">
                                     <form >
-                                        <div class="input-group">
+                                      <!--  <div class="input-group">
 
                                             <input type="text" id="input-group-2" name="dept_name" class="form-control" placeholder="Search by deptName">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>Search</button>
                                             </span>
 
-                                        </div>
+                                        </div>-->
                                     </form>
                                 </div>
                             </div>
@@ -299,10 +299,10 @@
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th>DeptId</th>
-                                        <th>DeptName</th>
-                                        <th>address</th>
-
+                                        <th>部门号</th>
+                                        <th>部门名</th>
+                                        <th>地址</th>
+                                        <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -312,8 +312,8 @@
                                         <td th:text="${dept.address}"></td>
 
                                         <td>
-                                            <a class="btn btn-sm btn-primary" href="#">编辑</a>
-                                            <button  class="btn btn-sm btn-danger deleteBtn">删除</button>
+                                            <a class="btn btn-sm btn-primary" th:href="@{/dept/}+${dept.id}">编辑</a>
+                                            <button th:attr="del_uri=@{/dept/}+${dept.id}" class="btn btn-sm btn-danger deleteBtn">删除</button>
                                         </td>
                                     </tr>
 
@@ -323,9 +323,9 @@
                         </div>
                     </div>
                 </div>
-               <!-- <form id="deleteEmpForm"  method="post">
+                <form id="deleteDeptForm"  method="post">
                     <input type="hidden" name="_method" value="delete"/>
-                </form>-->
+                </form>
             </div>
 
 
@@ -355,11 +355,11 @@
     <script th:src="@{/dist/js/carbon.js}"></script>
     <script th:src="@{/dist/js/demo.js}"></script>
     <script>
-      /*  $(".deleteBtn").click(function(){
+        $(".deleteBtn").click(function(){
             //删除当前员工的
-            $("#deleteEmpForm").attr("action",$(this).attr("del_uri")).submit();
+            $("#deleteDeptForm").attr("action",$(this).attr("del_uri")).submit();
             return false;
-        });*/
+        });
     </script>
 </body>
 </html>

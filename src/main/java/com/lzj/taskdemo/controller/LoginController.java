@@ -23,18 +23,21 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model, HttpSession session){
-        User user = loginService.login(username,password);
-        if (user!=null){
-            session.setAttribute("loginUser",user);
-
-
-            return "main";
-        }else{
-            model.addAttribute("error","用户名和密码错误");
+    public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model, HttpSession session) {
+        User user = loginService.login(username, password);
+        if (user != null) {
+            if (user.getRole().equals("admin")) {
+                session.setAttribute("loginUser", user);
+                return "admin_main";
+            } else {
+                session.setAttribute("loginUser", user);
+                return "main";
+            }
+        } else {
             return "login";
         }
     }
+
 
 
     @RequestMapping("/quit")

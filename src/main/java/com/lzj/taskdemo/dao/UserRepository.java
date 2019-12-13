@@ -15,6 +15,10 @@ public interface UserRepository extends JpaRepository<User,Integer> {
     @Query(value = "update User set password = ?1",nativeQuery = true)
     public void updatepsw(User user);*/
 
+
+
+
+
     @Override
     <S extends User> S save(S s);
 }

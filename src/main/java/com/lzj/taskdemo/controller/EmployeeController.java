@@ -32,6 +32,11 @@ public class EmployeeController {
         return "main";
     }
 
+    @RequestMapping("/to_admin_main")
+    public String main1(){
+        return "admin_main";
+    }
+
     @GetMapping("/list")
     public String list(Model model){
         Collection<Employee> employees = employeeService.getAll();
@@ -108,15 +113,6 @@ public class EmployeeController {
     public String search(@RequestParam("dept_name") String name,Model model){
         Collection<Employee> employees = employeeRepository.find(name);
         model.addAttribute("Emp",employees);
-
-
         return "employee_search";
     }
-
-
-
-
-
-
-
 }

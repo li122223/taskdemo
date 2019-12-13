@@ -6,7 +6,7 @@
 </head>-->
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>AddDept</title>
     <link rel="stylesheet" href="./vendor/simple-line-icons/css/simple-line-icons.css" th:href="@{/dist/vendor/simple-line-icons/css/simple-line-icons.css}">
     <link rel="stylesheet" href="./vendor/font-awesome/css/fontawesome-all.min.css" th:href="@{/dist/vendor/font-awesome/css/fontawesome-all.min.css}">
     <link rel="stylesheet" href="./css/styles.css" th:href="@{/dist/css/styles.css}">
@@ -91,38 +91,34 @@
                                 Basic Forms
                             </div>
 
-                            <form method="post" th:action="@{/UpdatePsw}">
-
-
+                            <form method="post" th:action="@{/AddDept}">
                                 <div class="card-body">
                                     <div class="row">
-
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="normal-input" class="form-control-label">旧密码</label>
-                                                <input id="normal-input" class="form-control" type="password" name="old" />
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="normal-input" class="form-control-label">新密码</label>
-                                                <input id="normal-input" class="form-control" type="password" name="password" />
+                                                <label for="normal-input" class="form-control-label">Id</label>
+                                                <input id="normal-input" class="form-control" value="Input value" name="id" />
                                             </div>
                                         </div>
 
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="normal-input" class="form-control-label">再次确认密码</label>
-                                                <input id="normal-input" class="form-control" type="password" name="password1" >
+                                                <label for="normal-input" class="form-control-label">name</label>
+                                                <input id="normal-input" class="form-control" value="Input value" name="DeptName" >
                                             </div>
-                                            <font color="red"><p  th:text="${message}"></p></font>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="normal-input" class="form-control-label">address</label>
+                                                <input id="normal-input" class="form-control" value="Input value" name="address" >
+                                            </div>
                                         </div>
 
                                         </div>
-                                        <button class="btn btn-primary" type="submit">update</button>
-                                        <a class="btn btn-success" th:href="@{/to_main}">back</a>
+                                        <button class="btn btn-primary" type="submit">add</button>
+                                        <a class="btn btn-success"  onclick="window.history.go(-1)">back</a>
                                     </div>
                                 </div>
                             </form>
